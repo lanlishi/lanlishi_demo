@@ -6,6 +6,12 @@ title: 我的Blog
 　　<h2>{{ page.title }}</h2>
    <img src = "images/head.jpg" title = "帅帅的作者" alt = "作者头像" />
 　　<p>最新文章</p>
+
+{% for post in paginator.posts %}
+{{ post.content }}
+{% endfor %}
+
+
 　　{% if paginator.previous_page %}
     <a href = "page{{ paginator.next_page }}">前一页</a>
 {% endif %}
