@@ -1,18 +1,18 @@
----
+ï»¿---
 layout: default
-title: ÀÏ¼ÖBlog
+title: è€è´¾Blog
 ---
 
-¡¡¡¡<h2>{{ page.title }}</h2>
+ã€€ã€€<h2>{{ page.title }}</h2>
 
-¡¡¡¡<p>×îĞÂÎÄÕÂ</p>
+ã€€ã€€<p>æœ€æ–°æ–‡ç« </p>
 
-¡¡¡¡<ul>
+ã€€ã€€<ul>
 
-¡¡¡¡¡¡¡¡{% for post in site.posts %}
+ã€€ã€€ã€€ã€€{% for post in site.posts %}
 
-¡¡¡¡¡¡¡¡¡¡¡¡<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+ã€€ã€€ã€€ã€€ã€€ã€€<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 
-¡¡¡¡¡¡¡¡{% endfor %}
+ã€€ã€€ã€€ã€€{% endfor %}
 
-¡¡¡¡</ul>
+ã€€ã€€</ul>
