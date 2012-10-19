@@ -7,6 +7,10 @@ title: 我的Blog
    <img src = "images/head.jpg" title = "帅帅的作者" alt = "作者头像" />
 　　<p>最新文章</p>
 　　<ul>
+
+{% for post in site.posts limit:3 %}
+{% endfor %}
+
 　　　　{% for post in site.posts %}
 　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 　　　　{% endfor %}
