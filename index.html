@@ -6,13 +6,29 @@ title: 我的Blog
 　　<h2>{{ page.title }}</h2>
    <img src = "images/head.jpg" title = "帅帅的作者" alt = "作者头像" />
 　　<p>最新文章</p>
-　　{% for post in site.posts %}
+　　{% for post in paginator.posts %}
   <div class="post">
-  	<h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+  	<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
   {{ post.content }}
   <p class="signoff">
-    &mdash; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.date | date: "%b %d, %Y" }}</a>
+    &mdash; <a href="{{ post.url }}">{{ post.date | date: "%b %d, %Y" }}</a>
   </p>
   </div>
 {% endfor %}
 
+<div id="pagination">	
+  {% if paginator.next_page %}
+  <span class="next">
+    <a href="/page{{paginator.next_page}}">→ ??????</a>
+  </span>
+  {% endif %}
+  {% if paginator.previous_page %}
+  <span class="previous">
+    {% if paginator.previous_page == 1 %}
+    <a href="/">?????? ←</a>
+    {% else %}
+    <a href="/page{{paginator.previous_page}}">?????? ←</a>
+    {% endif %}
+  </span>
+  {% endif %}
+</div>
